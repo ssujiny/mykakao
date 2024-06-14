@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sjin's KakaoTalk-notice</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/57aa56129c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <p class="minwidth">브라우저 가로 크기를<br />600px 이하로 줄여주세요~!</p>  
+
+  <div id="wrap">
+    <div class="phonebar">
+      <span>5 : 02</span>
+      <i class="fa-solid fa-signal"></i>
+      <i class="fa-solid fa-wifi"></i>
+      <i class="fa-solid fa-battery-three-quarters"></i>
+    </div>
+
+    <p class="kkobar">
+      <a href="#"><i class="fa fa-window-minimize"></i></a>
+      <a href="#"><i class="fa-regular fa-window-maximize"></i></a>
+      <a href="./friends.html"><i class="fa-solid fa-xmark"></i></a>
+    </p>
+
+    <nav class="setbar">
+      <span>Setting</span>
+      <ul>
+        <li><a href="./set_account.html"><i class="fas fa-id-card"></i></a></li>
+        <li><a href="#"><i class="fa-solid fa-bell"></i></a></li>
+        <li><a href="./set_information.html"><i class="fa-solid fa-circle-info"></i></a></li>
+      </ul>
+    </nav>  
+
+    <section class="notice">
+      <h1>알림</h1>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <input type="checkbox" name="alarm" id="alarm">
+              <label for="alarm">소리알림</label>
+            </li>
+            <li class="sound">
+              <label for="sound">음향</label>
+              <a href="#"><i class="fa-solid fa-circle-info"></i></a>
+              <span>카카오톡 전반적인 소리 크기를 조절합니다.</span>
+              <input type="range" name="sound" id="sound">
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <ul>
+            <li>
+              <input type="checkbox" name="inform" id="inform">
+              <label for="inform">알림창</label>
+            </li>
+            <li>
+              <input type="checkbox" name="informanswer" id="informanswer">
+              <label for="informanswer">알림창 답장</label>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <ul class="mark">
+            <li>
+              <label for="marktime">표시시간</label>
+              <select name="marktime" id="marktime">
+                <option value="3">3초</option>
+                <option value="5">5초</option>
+                <option value="7">7초</option>
+                <option value="10">10초</option>
+                <option value="15">15초</option>
+             </select>
+            </li>
+            <li>
+              <label for="markway">표시방법</label>
+              <select name="markway" id="markway">
+                <option value="sender+msg">보낸사람+메시지</option>
+                <option value="sender">보낸사람</option>
+                <option value="notall">모두 보여주지 않음</option>
+              </select>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <ul>
+            <li class="keyword">
+              <span >키워드 알림</span>
+              <input type="checkbox" name="keyalarm" id="keyalarm">
+              <label for="keyalarm" class="keyback"></label>
+            </li>
+            <li><button>키워드 편집</button></li>
+          </ul>
+        </li>
+      </ul>
+
+ 
+      
+    </section>
+    
+  </div>
+</body>
+</html>

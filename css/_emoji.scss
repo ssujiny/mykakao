@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+#wrap {
+	> .emoji {
+		@include excludeBar(60px);
+		width: $calWidth;
+		>h1{border-bottom: 1px solid #ccc;}
+		>h1,h2{line-height: 2;}
+		>ol{
+			>li{
+				margin-bottom: 15px;
+				&:hover{@include listhover();}
+				&:nth-of-type(1),
+				&:nth-of-type(2),
+				&:nth-of-type(5){
+					position: relative;
+					>a{
+						>i{
+						position: absolute;
+						top: 0;
+						left: 0;
+						color: #2854c5;
+						font-size: 30px;
+					}
+					}
+				}
+				>a{
+					display: flex;
+					align-items: center;
+					>img{
+						width: 90px;
+						height: 90px;
+						margin: 10px;
+						border-radius: 10px;
+						}//img
+					>.etext{
+						font-weight: 500;
+						font-size: 15px;
+						line-height: 1.6;
+					}
+				}//a
+			}//li
+		}//ol
+	
+	}//.emoji
+} //wrap
+

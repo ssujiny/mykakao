@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+@import "./reset.css" ,"_leftbar", "_friends", "_chatlist", "_chat1", "_chat2", "_chat3", "_more", "_emoji", "_set", "_notice", "_info";
+
+@mixin flexCenter (){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin excludeBar($top) {
+	position: absolute;
+	top: $top;
+	left: 120px;
+}
+
+@mixin profileImg (){
+  width: 80px;
+  height: 80px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px #333;
+}
+
+@mixin listhover() {
+  background-color: rgba(rgb(143, 188, 203), .5);
+  border-radius: 10px;
+}
+
+
+
+//반응형 600px 기준 
+body{
+  @include flexCenter();
+  background-color: pink;
+  >.minwidth{
+    font-weight: 600;
+    font-size: 40px;
+  }
+  #wrap{display: none;}
+  @media screen and (max-width:600px){
+      background-color: #fff;
+      .minwidth{display: none;}
+      #wrap{display: block;}
+      }
+      }
+      
+       
+//공통부분 - 기본 폰 상단바 
+#wrap {
+  overflow: hidden;
+  position: relative;
+  width: 600px;
+  min-width: 550px;
+  height: 900px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  >div.phonebar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #fafafa;
+    >span {
+      position: absolute;
+      left: 15px;
+      padding: 1px 7px;
+      color: #fff;
+      font-weight: 700;
+      line-height: 18px;
+      background-color: #222;
+      border-radius: 15px;
+      box-sizing: border-box;
+    }//span, 시계
+    >i {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }//.phonebar
+  //카카오 상단바
+  >p.kkobar {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    >a{
+      @include flexCenter();
+      width: 20px;
+      height: 20px;
+      margin: 0 8px;
+      &:hover{color: #555;}
+      &:last-child:hover{
+      color : palevioletred;
+      }//a:hover
+       >i {
+        font-size: 20px;
+       }
+    }
+   
+  }//.kkobar
+  .box{
+    margin: 15px;
+    padding: 20px;
+    line-height: 1.8;
+    border: 1px solid #555;
+    border-radius: 20px;
+  }//.box
+  .profiletext {
+    > p {
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+  } //.profiletext
+}//wrap
+
+#wrap.main {
+  text-align: center;
+  background-color: lightblue;
+  >p.kkobar {
+    >.bell{
+      width: 24px;
+      height: 24px;
+      @include bell;
+    }
+    >a{
+      &:nth-child(2){
+        padding-right: 10px;
+        border-right: 1px solid #444;
+        &:hover{color: palevioletred;}
+      }//a:nth(2)
+      &:last-child{&:hover{color: #555;}}
+    }//a
+  }//.kkobar
+
+  >section.lock{
+    width: 100%;
+    position: absolute;
+    top: 200px;
+    font-weight: 500;
+    >figure{
+    margin: 30px 0 80px 0;
+    text-align: center;
+      >img{
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        border-radius: 30px;
+      }//img
+      >figcaption{
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }//figure
+    >h1{
+      margin-bottom: 20px;
+      color: lightseagreen;
+      text-shadow: 1px -1px 1px rgb(122, 199, 225);
+    }//h1
+    >h2{margin-bottom: 100px;}
+    >label {padding: 0 10px;}
+    >input {
+      width: 200px;
+      height: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      &:focus{outline: 2px solid #2854c5;}
+    }
+    >button{
+      display: block;
+      margin: 15px auto;
+      background: none;
+      border: none;
+      outline: none;
+      >a{
+        @include flexCenter;
+        width: 50px;
+        padding: 5px 10px;
+        border: 1px solid #fafafa;
+        border-radius: 5px;
+        &:hover{
+          background-color: lightsteelblue;
+        }//a:hover
+ 
+      }//a
+    }//button
+
+  }//section
+
+}//#wrap

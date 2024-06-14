@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+@mixin profileImg () {
+	width: 80px;
+	height: 80px;
+	border-radius: 30px;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin excludeBar($top) {
+	position: absolute;
+	top: $top;
+	left: 120px;
+}
+
+@mixin listhover() {
+		background-color: rgba(rgb(143, 188, 203), .5);
+		border-radius: 10px;
+}
+
+$calWidth: calc(100% - 140px);
+
+#wrap {
+  background-color: rgba(rgb(143, 188, 203), .4);
+	> .friends {
+		width: $calWidth;
+		@include excludeBar(50px);
+		> .myprofile {
+			&:hover {@include listhover();}
+			> a {
+        display: flex;
+        align-items: center;
+				border-bottom: 1px solid #222;
+				> img {
+					@include profileImg();
+					margin: 20px;
+				} //i
+				> .profiletext {
+					> p {
+						font-weight: 500;
+						font-size: 17px;
+						line-height: 1.6;
+					}
+				} //.profiletext
+			} //a
+		} //.myprofile
+
+		> nav.index {
+			
+			> ul {
+				> li {
+					margin-bottom: 5px;
+					padding-left: 20px;
+					text-align: left;
+					background-color: rgba(#efefef, .8);
+					border-bottom: 1px solid #ddd;
+					box-sizing: border-box;
+
+					> a {
+						display: block;
+						height: 22px;
+						margin-bottom: 5px;
+						font-weight: 500;
+						line-height: 22px;
+					} //a
+					> ol {
+						> li {
+							display: none;
+							margin-right: 15px;
+
+							> a {
+								@include flexCenter();
+								flex-flow: column nowrap;
+								width: 50px;
+								font-weight: 500;
+								font-size: 12px;
+								> .indeximg {
+									display: block;
+									width: 40px;
+									height: 40px;
+									border-radius: 10px;
+								} //.indeximg
+							} //a
+						} //li
+					} //ol
+					&:nth-child(1) {
+						> ol {
+							display: flex;
+							flex-flow: row nowrap;
+							> li {
+								> a {
+									@include flexCenter();
+									flex-flow: column nowrap;
+								}
+							}//li
+						}//ol
+					}//ol:nth(1)
+					&:hover {
+					& > ol {
+							> li {
+								display: flex;
+							}
+					} //ol
+					} //li:hover
+				} //li
+			} //ul
+		} //.index
+		>h3{
+			height: 35px;
+			line-height: 35px;
+		}
+		> .friend {
+			&:hover {@include listhover();}
+			> a {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				border-bottom: 1px solid #aaa;
+				> img {
+					@include profileImg();
+					margin: 10px;
+				} //i
+				> .profiletext {
+					> h4 {
+						font-weight: 500;
+						font-size: 18px;
+						line-height: 1.8;
+					} //h4
+          >p {
+            padding: 0 5px;
+            font-size: 14px;
+            background-color: rgba(#fff, .6);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+          }
+				} //.profiletext
+			} //friend
+		} //a
+	} //section
+} //wrap
