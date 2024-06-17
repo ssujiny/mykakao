@@ -7,9 +7,9 @@
 }
 
 @mixin flexCenter() {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @mixin excludeBar($top) {
@@ -19,22 +19,31 @@
 }
 
 @mixin listhover() {
-		background-color: rgba(rgb(143, 188, 203), .5);
-		border-radius: 10px;
+	background-color: rgba(rgb(143, 188, 203), .5);
+	border-radius: 10px;
 }
 
 $calWidth: calc(100% - 140px);
 
 #wrap {
-  background-color: rgba(rgb(143, 188, 203), .4);
+	background-color: rgba(rgb(143, 188, 203), .4);
+	> p.kkobar {
+		> a{
+			&:nth-of-type(3){
+				&:hover {>i{color: #555;}}
+			}
+		}
+	}
 	> .friends {
 		width: $calWidth;
 		@include excludeBar(50px);
 		> .myprofile {
-			&:hover {@include listhover();}
+			&:hover {
+				@include listhover();
+			}
 			> a {
-        display: flex;
-        align-items: center;
+				display: flex;
+				align-items: center;
 				border-bottom: 1px solid #222;
 				> img {
 					@include profileImg();
@@ -51,7 +60,6 @@ $calWidth: calc(100% - 140px);
 		} //.myprofile
 
 		> nav.index {
-			
 			> ul {
 				> li {
 					margin-bottom: 5px;
@@ -97,25 +105,27 @@ $calWidth: calc(100% - 140px);
 									@include flexCenter();
 									flex-flow: column nowrap;
 								}
-							}//li
-						}//ol
-					}//ol:nth(1)
+							} //li
+						} //ol
+					} //ol:nth(1)
 					&:hover {
-					& > ol {
+						& > ol {
 							> li {
 								display: flex;
 							}
-					} //ol
+						} //ol
 					} //li:hover
 				} //li
 			} //ul
 		} //.index
-		>h3{
+		> h3 {
 			height: 35px;
 			line-height: 35px;
 		}
 		> .friend {
-			&:hover {@include listhover();}
+			&:hover {
+				@include listhover();
+			}
 			> a {
 				display: flex;
 				flex-flow: row nowrap;
@@ -131,13 +141,13 @@ $calWidth: calc(100% - 140px);
 						font-size: 18px;
 						line-height: 1.8;
 					} //h4
-          >p {
-            padding: 0 5px;
-            font-size: 14px;
-            background-color: rgba(#fff, .6);
-            border: 1px solid #ddd;
-            border-radius: 10px;
-          }
+					> p {
+						padding: 0 5px;
+						font-size: 14px;
+						background-color: rgba(#fff, .6);
+						border: 1px solid #ddd;
+						border-radius: 10px;
+					}
 				} //.profiletext
 			} //friend
 		} //a
