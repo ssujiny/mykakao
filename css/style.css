@@ -19,7 +19,7 @@
   position: absolute;
   left: 0;
   top: 25px;
-  width: 100px;
+  width: 80px;
   height: calc(100% - 25px);
   background-color: #efefef;
   animation: bar 1s 0.8 0s forwards;
@@ -79,15 +79,17 @@
 #wrap {
   background-color: rgba(143, 188, 203, 0.4);
 }
+#wrap > .kkobar > a:last-child > .noact:hover {
+  color: #555;
+}
 #wrap > .friends {
-  width: calc(100% - 140px);
+  width: calc(100% - 100px);
   position: absolute;
   top: 50px;
-  left: 120px;
+  left: 90px;
 }
 #wrap > .friends > .myprofile:hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
 #wrap > .friends > .myprofile > a {
   display: flex;
@@ -158,7 +160,6 @@
 }
 #wrap > .friends > .friend:hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
 #wrap > .friends > .friend > a {
   display: flex;
@@ -191,8 +192,8 @@
 #wrap > .chatlist {
   position: absolute;
   top: 60px;
-  left: 120px;
-  width: calc(100% - 140px);
+  left: 90px;
+  width: calc(100% - 100px);
 }
 #wrap > .chatlist > h1 {
   padding: 10px;
@@ -212,7 +213,6 @@
 }
 #wrap > .chatlist > .talk:hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
 #wrap > .chatlist > .talk:nth-of-type(2) > a > .profiletext > p {
   width: 220px;
@@ -231,7 +231,7 @@
   width: 80px;
   height: 80px;
   border-radius: 30px;
-  margin: 20px;
+  margin: 20px 10px;
 }
 #wrap > .chatlist > .talk > a > .sujins {
   display: flex;
@@ -239,7 +239,7 @@
   justify-content: space-between;
   width: 80px;
   height: 80px;
-  margin: 20px;
+  margin: 20px 10px;
 }
 #wrap > .chatlist > .talk > a > .sujins > img {
   display: block;
@@ -248,12 +248,12 @@
   border-radius: 10px;
 }
 #wrap > .chatlist > .talk > a > .sujins + .profiletext > h2 > span {
-  padding: 0 5px;
+  padding: 5px;
   font-size: 15px;
   color: #666;
 }
 #wrap > .chatlist > .talk > a > .sujins + .profiletext > p {
-  width: 220px;
+  width: 200px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -271,7 +271,7 @@
 #wrap > .chatlist > .talk > a > .talktime + span {
   display: inline-block;
   position: absolute;
-  top: 50px;
+  top: 45px;
   right: 10px;
   width: 20px;
   height: 20px;
@@ -326,7 +326,7 @@ header > .intro > p {
 header > .plusicon {
   display: flex;
   position: absolute;
-  right: 20px;
+  right: 15px;
 }
 header > .plusicon > a {
   display: block;
@@ -378,12 +378,12 @@ section.talkroom1 .yours {
   margin-left: 5px;
 }
 section.talkroom1 > h2 {
+  display: flex;
+  align-items: center;
   grid-column: 1/5;
-  height: 60px;
-  margin: 0 10px;
+  height: 100%;
   padding: 0 10px;
   font-size: 20px;
-  line-height: 60px;
   background-color: #fafafa;
   border-radius: 5px;
 }
@@ -417,8 +417,7 @@ section.talkroom1 > h3 {
   display: none;
   grid-row: 2/3;
   grid-column: 1/5;
-  height: 60px;
-  margin: 0 10px;
+  height: 100%;
   padding: 0 20px;
   font-size: 20px;
   line-height: 60px;
@@ -502,7 +501,7 @@ footer > button {
   border-radius: 5px;
 }
 footer > button:hover {
-  background-color: #555;
+  background-color: #ddd;
 }
 footer > .plusicon {
   position: absolute;
@@ -520,7 +519,7 @@ footer > .plusicon > a > i:hover {
 
 @keyframes heart {
   0% {
-    tranform: scale(1);
+    transform: scale(1);
     transition: all 1s;
   }
   100% {
@@ -537,9 +536,10 @@ section.talkroom2 {
   position: absolute;
   top: 175px;
   width: 100%;
-  height: 535px;
+  height: 530px;
 }
-section.talkroom2 p, section.talkroom2 h2 {
+section.talkroom2 p,
+section.talkroom2 h2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -610,7 +610,7 @@ section.talkroom2 > figure + p + p {
 section.talkroom2 > h2 {
   position: relative;
   grid-row: 6/7;
-  grid-column: 3/7;
+  grid-column: 2/7;
 }
 section.talkroom2 > h2 > .like {
   display: flex;
@@ -667,7 +667,7 @@ section.talkroom3 {
   position: absolute;
   top: 171px;
   width: 100%;
-  height: 537px;
+  height: 530px;
 }
 section.talkroom3 .mine {
   margin-right: 20px;
@@ -700,8 +700,8 @@ section.talkroom3 > .video-container {
   justify-content: center;
   align-items: center;
   grid-row: 1/2;
-  grid-column: 4/7;
-  margin-right: 8px;
+  grid-column: 3/7;
+  margin-right: 15px;
   padding: 5px;
   background-color: lightyellow;
   border-radius: 10px;
@@ -721,34 +721,26 @@ section.talkroom3 > h2 {
   height: 50px;
   padding: 5px;
   grid-row: 3/4;
-  grid-column: 2/5;
+  grid-column: 2/6;
   font-size: 18px;
   line-height: 50px;
   background-color: #fafafa;
   border-radius: 10px;
 }
 section.talkroom3 figcaption {
-  text-align: center;
   font-weight: 600;
+  text-align: center;
 }
 section.talkroom3 .vote {
   grid-row: 4/5;
   grid-column: 2/6;
   padding: 10px;
   margin: 5px 10px 10px 10px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.6;
   background-color: #fafafa;
   border-radius: 10px;
-}
-section.talkroom3 .vote + p {
-  grid-row: 5/6;
-  grid-column: 3/7;
-}
-section.talkroom3 .vote + p + p {
-  grid-row: 6/7;
-  grid-column: 3/7;
 }
 section.talkroom3 .vote input {
   display: none;
@@ -762,7 +754,6 @@ section.talkroom3 .vote input + label {
 }
 section.talkroom3 .vote input + label:hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
 section.talkroom3 .vote input + label:before {
   display: inline-block;
@@ -775,19 +766,19 @@ section.talkroom3 .vote input + label:before {
 }
 section.talkroom3 > p:nth-of-type(2) {
   grid-row: 5/6;
-  grid-column: 3/7;
+  grid-column: 2/7;
 }
 section.talkroom3 > p:nth-of-type(2) + p {
   grid-row: 6/7;
-  grid-column: 3/7;
+  grid-column: 2/7;
 }
 section.talkroom3 > p:nth-of-type(4) {
   grid-row: 7/8;
-  grid-column: 4/7;
+  grid-column: 3/7;
 }
 section.talkroom3 > p:nth-of-type(4) + p {
   grid-row: 8/9;
-  grid-column: 4/7;
+  grid-column: 3/7;
   font-weight: 700;
 }
 section.talkroom3 > figure:nth-of-type(4) {
@@ -801,8 +792,8 @@ section.talkroom3 > figure:nth-of-type(4) + p {
 #wrap > .more {
   position: absolute;
   top: 60px;
-  left: 120px;
-  width: calc(100% - 140px);
+  left: 90px;
+  width: calc(100% - 100px);
 }
 #wrap > .more .box > address {
   font-weight: 500;
@@ -827,7 +818,7 @@ section.talkroom3 > figure:nth-of-type(4) + p {
   border-radius: 10px;
 }
 #wrap > .more > ul > li {
-  width: 110px;
+  width: 100px;
   height: 100px;
   margin: 5px 5px 30px 5px;
   font-weight: 500;
@@ -846,9 +837,9 @@ section.talkroom3 > figure:nth-of-type(4) + p {
 #wrap > .more > ul > li > img {
   display: none;
   position: absolute;
-  top: 465px;
-  right: calc(50% - 220px);
-  width: 440px;
+  top: 500px;
+  right: calc(50% - 200px);
+  width: 400px;
 }
 #wrap > .more > ul > li:nth-child(5):hover > .food > li {
   display: block;
@@ -864,7 +855,7 @@ section.talkroom3 > figure:nth-of-type(4) + p {
   position: absolute;
   top: 500px;
   right: calc(50% - 220px);
-  width: 450px;
+  width: 440px;
   height: 300px;
 }
 #wrap > .more > ul > li > .food > li {
@@ -887,13 +878,20 @@ section.talkroom3 > figure:nth-of-type(4) + p {
 #wrap > .emoji {
   position: absolute;
   top: 60px;
-  left: 120px;
-  width: calc(100% - 140px);
+  left: 90px;
+  width: calc(100% - 100px);
+}
+#wrap > .emoji .fa-snowflake {
+  color: aqua;
+}
+#wrap > .emoji .fa-sun {
+  color: orangered;
 }
 #wrap > .emoji > h1 {
   border-bottom: 1px solid #ccc;
 }
-#wrap > .emoji > h1, #wrap > .emoji h2 {
+#wrap > .emoji > h1,
+#wrap > .emoji h2 {
   line-height: 2;
 }
 #wrap > .emoji > ol > li {
@@ -901,7 +899,6 @@ section.talkroom3 > figure:nth-of-type(4) + p {
 }
 #wrap > .emoji > ol > li:hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
 #wrap > .emoji > ol > li:nth-of-type(1), #wrap > .emoji > ol > li:nth-of-type(2), #wrap > .emoji > ol > li:nth-of-type(5) {
   position: relative;
@@ -930,7 +927,7 @@ section.talkroom3 > figure:nth-of-type(4) + p {
 }
 
 nav.setbar {
-  width: 100px;
+  width: 80px;
   height: calc(100% - 25px);
   position: absolute;
   top: 25px;
@@ -954,12 +951,12 @@ nav.setbar > ul > li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
+  width: 50px;
   margin: 20px 0 50px 0;
 }
 nav.setbar > ul > li > a {
   display: block;
-  height: 60px;
+  height: 50px;
   line-height: 60px;
   font-size: 40px;
 }
@@ -970,8 +967,8 @@ nav.setbar > ul > li > a:hover {
 .account {
   position: absolute;
   top: 60px;
-  left: 120px;
-  width: calc(100% - 140px);
+  left: 90px;
+  width: calc(100% - 100px);
   font-weight: 500;
   font-size: 20px;
 }
@@ -1020,7 +1017,6 @@ nav.setbar > ul > li > a:hover {
 }
 .account > div:nth-of-type(3):hover, .account > div:nth-of-type(4):hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
 .account > div > img {
   float: left;
@@ -1031,7 +1027,7 @@ nav.setbar > ul > li > a:hover {
 }
 .account > div > h3 {
   float: left;
-  margin: 35px 45px 30px 5px;
+  margin: 35px 30px 30px 5px;
 }
 .account > div button {
   background: none;
@@ -1058,8 +1054,8 @@ nav.setbar > ul > li > a:hover {
 .notice {
   position: absolute;
   top: 60px;
-  left: 120px;
-  width: calc(100% - 140px);
+  left: 90px;
+  width: calc(100% - 100px);
   font-weight: 500;
   font-size: 20px;
 }
@@ -1069,21 +1065,30 @@ nav.setbar > ul > li > a:hover {
   line-height: 2;
   border-bottom: 1px solid #ccc;
 }
-.notice > ul > li #alarm, .notice > ul > li #inform, .notice > ul > li #informanswer {
+.notice > ul > li #alarm,
+.notice > ul > li #inform,
+.notice > ul > li #informanswer {
   display: none;
 }
-.notice > ul > li #alarm:checked + label:before, .notice > ul > li #inform:checked + label:before, .notice > ul > li #informanswer:checked + label:before {
+.notice > ul > li #alarm:checked + label:before,
+.notice > ul > li #inform:checked + label:before,
+.notice > ul > li #informanswer:checked + label:before {
   background-image: url(./../images/checkedbox.png);
 }
-.notice > ul > li #alarm + label, .notice > ul > li #inform + label, .notice > ul > li #informanswer + label {
+.notice > ul > li #alarm + label,
+.notice > ul > li #inform + label,
+.notice > ul > li #informanswer + label {
   display: flex;
   align-items: center;
 }
-.notice > ul > li #alarm + label:hover, .notice > ul > li #inform + label:hover, .notice > ul > li #informanswer + label:hover {
+.notice > ul > li #alarm + label:hover,
+.notice > ul > li #inform + label:hover,
+.notice > ul > li #informanswer + label:hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
-.notice > ul > li #alarm + label:before, .notice > ul > li #inform + label:before, .notice > ul > li #informanswer + label:before {
+.notice > ul > li #alarm + label:before,
+.notice > ul > li #inform + label:before,
+.notice > ul > li #informanswer + label:before {
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -1201,8 +1206,8 @@ nav.setbar > ul > li > a:hover {
 .info {
   position: absolute;
   top: 60px;
-  left: 120px;
-  width: calc(100% - 140px);
+  left: 90px;
+  width: calc(100% - 100px);
   font-weight: 500;
   font-size: 20px;
 }
@@ -1224,7 +1229,6 @@ nav.setbar > ul > li > a:hover {
 }
 .info > .version .profiletext > a:hover {
   background-color: rgba(143, 188, 203, 0.5);
-  border-radius: 10px;
 }
 .info > ol {
   overflow: auto;
@@ -1251,11 +1255,12 @@ body {
 body > .minwidth {
   font-weight: 600;
   font-size: 40px;
+  text-align: center;
 }
 body #wrap {
   display: none;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
   body {
     background-color: #fff;
   }
@@ -1264,14 +1269,14 @@ body #wrap {
   }
   body #wrap {
     display: block;
+    width: 100%;
   }
 }
 
 #wrap {
   overflow: hidden;
   position: relative;
-  width: 600px;
-  min-width: 550px;
+  width: 550px;
   height: 900px;
   margin: 0 auto;
   border: 1px solid #ccc;
@@ -1306,7 +1311,7 @@ body #wrap {
 #wrap > p.kkobar {
   display: flex;
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 35px;
 }
 #wrap > p.kkobar > a {
@@ -1391,34 +1396,30 @@ body #wrap {
 #wrap.main > section.lock > h2 {
   margin-bottom: 100px;
 }
-#wrap.main > section.lock > label {
+#wrap.main > section.lock > form > label {
   padding: 0 10px;
 }
-#wrap.main > section.lock > input {
+#wrap.main > section.lock > form > input {
   width: 200px;
   height: 20px;
   padding: 10px;
   border-radius: 5px;
 }
-#wrap.main > section.lock > input:focus {
+#wrap.main > section.lock > form > input:focus {
   outline: 2px solid #2854c5;
 }
-#wrap.main > section.lock > button {
-  display: block;
-  margin: 15px auto;
-  background: none;
-  border: none;
-  outline: none;
-}
-#wrap.main > section.lock > button > a {
+#wrap.main > section.lock > form > button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  padding: 5px 10px;
+  margin: 25px auto;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
   border: 1px solid #fafafa;
   border-radius: 5px;
 }
-#wrap.main > section.lock > button > a:hover {
+#wrap.main > section.lock > form > button:hover {
   background-color: lightsteelblue;
 }/*# sourceMappingURL=style.css.map */

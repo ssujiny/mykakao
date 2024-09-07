@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+@mixin bluebtn() {
+	margin-right: 5px;
+	padding: 10px 15px;
+	background-color: lightblue;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	&:hover {
+		background-color: lightsteelblue;
+	}
+}
+
+nav.setbar {
+	width: 80px;
+	height: calc(100% - 25px);
+	position: absolute;
+	top: 25px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 500;
+	background-color: #efefef;
+	animation: bar 1s 0.8 0s forwards;
+	> span {
+		padding: 0 0 5px 0;
+		font-size: 22px;
+		border-bottom: 1px dashed #ddd;
+	}
+	> ul {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		> li {
+			@include flexCenter;
+			width: 50px;
+			margin: 20px 0 50px 0;
+			> a {
+				display: block;
+				height: 50px;
+				line-height: 60px;
+				font-size: 40px;
+				&:hover {
+					color: palevioletred;
+				}
+			} //a
+		} //li
+	} //ul
+} //.setbar
+
+.account {
+	@include excludeBar(60px);
+	width: $calWidth;
+	font-weight: 500;
+	font-size: 20px;
+	//검색 허용 여부 스위치
+	> .search {
+		width: 200px;
+		font-size: 0;
+		margin: 0 auto;
+		&:hover {
+			background-color: initial;
+		}
+		> input {
+			display: none;
+			&:checked + label {
+				color: #fff;
+				background-color: skyblue;
+			}
+		}
+		> label {
+			display: inline-block;
+			margin-bottom: 15px;
+			padding: 7px 10px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			&:nth-of-type(1) {
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+			}
+			&:nth-of-type(2) {
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+			&:hover {
+				color: palevioletred;
+			}
+		}
+	}
+
+	> h2 {
+		padding-top: 20px;
+		font-size: 22px;
+		border-top: 1px solid #aaa;
+	}
+	> div {
+		&:after {
+			display: block;
+			clear: both;
+			content: '';
+		}
+		&:nth-of-type(3),
+		&:nth-of-type(4) {
+			&:hover {
+				@include listhover();
+			}
+		}
+
+		> img {
+			float: left;
+			@include profileImg();
+			margin: 15px;
+		}
+		> h3 {
+			float: left;
+			margin: 35px 30px 30px 5px;
+		} //h3
+		button {
+			background: none;
+			outline: none;
+			@include bluebtn();
+			margin-top: 30px;
+		}
+	} //div
+	> h3 {
+		font-size: 20px;
+		padding-top: 15px;
+		border-top: 1px solid #aaa;
+		& + .box {
+			font-size: 16px;
+		}
+	} //h3
+} //.account

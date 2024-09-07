@@ -1,40 +1,44 @@
 @charset "utf-8";
 
-$calWidth: calc(100% - 140px);
+$calWidth: calc(100% - 100px);
 
 #wrap {
-  background-color: rgba(rgb(143, 188, 203), .4);
+	background-color: rgba(rgb(143, 188, 203), .4);
 	> .chatlist {
 		@include excludeBar(60px);
 		width: $calWidth;
-		>h1 {
+		> h1 {
 			padding: 10px;
 			border-bottom: 1px solid #222;
-		}//h1
-		>p{
+		} //h1
+		> p {
 			position: absolute;
 			top: 15px;
 			right: 5px;
-			>i{
+			> i {
 				margin-left: 5px;
 				font-size: 25px;
-				&:hover {color:#555}
-			}//i
-		}//p
-		>.talk{
-			&:hover {@include listhover();}
-			&:nth-of-type(2){
-				>a{
-					>.profiletext{
-						>p{
+				&:hover {
+					color: #555;
+				}
+			} //i
+		} //p
+		> .talk {
+			&:hover {
+				@include listhover();
+			}
+			&:nth-of-type(2) {
+				> a {
+					> .profiletext {
+						> p {
 							width: 220px;
 							overflow: hidden;
 							white-space: nowrap;
 							text-overflow: ellipsis;
-						}//p
-					}//.profiletext
-				}//a
-			}//.talk:nth(2)
+						} //p
+					} //.profiletext
+				} //a
+			} //.talk:nth(2)
 			> a {
 				display: flex;
 				flex-flow: row nowrap;
@@ -43,38 +47,37 @@ $calWidth: calc(100% - 140px);
 				border-bottom: 1px solid #aaa;
 				> img {
 					@include profileImg();
-					margin: 20px;
+					margin: 20px 10px;
 				} //image
-				>.sujins {
+				> .sujins {
 					display: flex;
 					flex-flow: row wrap;
 					justify-content: space-between;
 					width: 80px;
 					height: 80px;
-					margin: 20px;
-					>img{
+					margin: 20px 10px;
+					> img {
 						display: block;
 						width: 38px;
 						height: 38px;
 						border-radius: 10px;
 					}
-					&+.profiletext{
-						>h2{
-							>span{
-								padding: 0 5px;
+					& + .profiletext {
+						> h2 {
+							> span {
+								padding: 5px;
 								font-size: 15px;
 								color: #666;
-							}//span
-						}//h2
-						>p{
-						width: 220px;
-						overflow: hidden;
-						white-space: nowrap;
-						text-overflow: ellipsis;
-					}
-					}//.sujin+.profiletext
-					
-				}//.sujins
+							} //span
+						} //h2
+						> p {
+							width: 200px;
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+						} //p
+					} //.sujin+.profiletext
+				} //.sujins
 				> .profiletext {
 					> h2 {
 						font-weight: 500;
@@ -82,14 +85,14 @@ $calWidth: calc(100% - 140px);
 						line-height: 1.8;
 					} //h2
 				} //.profiletext
-				>.talktime{
+				> .talktime {
 					position: absolute;
 					top: 20px;
 					right: 10px;
-					&+span{
+					& + span {
 						display: inline-block;
 						position: absolute;
-						top: 50px;
+						top: 45px;
 						right: 10px;
 						width: 20px;
 						height: 20px;
@@ -98,11 +101,9 @@ $calWidth: calc(100% - 140px);
 						text-align: center;
 						background-color: red;
 						border-radius: 10px;
-					}
-				}
+					} //span
+				} //.talktime
 			} //a
-
-			}//talk
-		} //.chatlist
-	} //wrap
-
+		}
+	} //talk
+} //wrap

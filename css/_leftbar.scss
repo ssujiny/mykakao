@@ -1,80 +1,91 @@
 @charset "utf-8";
 
 @mixin bell() {
-  display: block;
-  background-image: url(./../images/bell.png);
-  background-size: cover;
-  &.off{
-    background-image: url(./../images/belloff.png);
-  }
-};
+	display: block;
+	background-image: url(./../images/bell.png);
+	background-size: cover;
+	&.off {
+		background-image: url(./../images/belloff.png);
+	}
+}
 
 @keyframes chatball {
-  0% {transform:translate(0,1px);}
-  100% {transform:translate(0, -5px);}
+	0% {
+		transform: translate(0, 1px);
+	}
+	100% {
+		transform: translate(0, -5px);
+	}
 }
 
 @keyframes bar {
-  0% {transform: translate(-100px, 0);}
-  100% {transform: translate(0,0);}
+	0% {
+		transform: translate(-100px, 0);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
 }
 
 #wrap {
-  >nav.leftbar{
-    position: absolute;
-    left: 0;
-    top: 25px;
-    width: 100px;
-    height: calc(100% - 25px);
-    background-color: #efefef;
-    animation: bar 1s 0.8 0s forwards;
-    >ul{
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: space-between;
-      height: 100%;
-      >li{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 40px 20px;
-        >.bell{
-          width: 45px;
-          height: 45px;
-          @include bell;
-        }//.bell
-        
-        >a{
-          position: relative;
-          >i{
-          font-size: 30px;
-          }//i 
-          >span {
-            display: block;
-            position: absolute;
-            top: -5px;
-            right: -8px;
-            width: 22px;
-            height: 20px;
-            color: #fff;
-            font-weight: 600;
-            text-align: center;
-            background-color: red;
-            border-radius: 10px;
-            animation: chatball 1s infinite 0s alternate ;
-          }//span   
-        }//a
+	> nav.leftbar {
+		position: absolute;
+		left: 0;
+		top: 25px;
+		width: 80px;
+		height: calc(100% - 25px);
+		background-color: #efefef;
+		animation: bar 1s 0.8 0s forwards;
+		> ul {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+			height: 100%;
+			> li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 40px 20px;
+				> .bell {
+					width: 45px;
+					height: 45px;
+					@include bell;
+				} //.bell
 
-        :hover {color: palevioletred;}
+				> a {
+					position: relative;
+					> i {
+						font-size: 30px;
+					} //i
+					> span {
+						display: block;
+						position: absolute;
+						top: -5px;
+						right: -8px;
+						width: 22px;
+						height: 20px;
+						color: #fff;
+						font-weight: 600;
+						text-align: center;
+						background-color: red;
+						border-radius: 10px;
+						animation: chatball 1s infinite 0s alternate;
+					} //span
+				} //a
 
-        &:nth-child(2):hover{
-          >a{
-          color: palevioletred;
-          >span{color:#fff;}
-          }
-        }
-      }//li
-    }//ul
-  }//nav
-}//#wrap
+				:hover {
+					color: palevioletred;
+				}
 
+				&:nth-child(2):hover {
+					> a {
+						color: palevioletred;
+						> span {
+							color: #fff;
+						}
+					}
+				}
+			} //li
+		} //ul
+	} //nav
+} //#wrap
