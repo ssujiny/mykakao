@@ -79,7 +79,11 @@
 #wrap {
   background-color: rgba(143, 188, 203, 0.4);
 }
+<<<<<<< HEAD
 #wrap > .kkobar > a:last-child > .noact:hover {
+=======
+#wrap > p.kkobar > a:nth-of-type(3):hover > i {
+>>>>>>> 12c0b0ca6775439d07170fe95738d25d41a5374d
   color: #555;
 }
 #wrap > .friends {
@@ -382,6 +386,10 @@ section.talkroom1 > h2 {
   align-items: center;
   grid-column: 1/5;
   height: 100%;
+<<<<<<< HEAD
+=======
+  margin: 0 10px;
+>>>>>>> 12c0b0ca6775439d07170fe95738d25d41a5374d
   padding: 0 10px;
   font-size: 20px;
   background-color: #fafafa;
@@ -418,6 +426,10 @@ section.talkroom1 > h3 {
   grid-row: 2/3;
   grid-column: 1/5;
   height: 100%;
+<<<<<<< HEAD
+=======
+  margin: 0 10px;
+>>>>>>> 12c0b0ca6775439d07170fe95738d25d41a5374d
   padding: 0 20px;
   font-size: 20px;
   line-height: 60px;
@@ -700,7 +712,11 @@ section.talkroom3 > .video-container {
   justify-content: center;
   align-items: center;
   grid-row: 1/2;
+<<<<<<< HEAD
   grid-column: 3/7;
+=======
+  grid-column: 4/7;
+>>>>>>> 12c0b0ca6775439d07170fe95738d25d41a5374d
   margin-right: 15px;
   padding: 5px;
   background-color: lightyellow;
